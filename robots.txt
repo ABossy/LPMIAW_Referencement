@@ -1,0 +1,3 @@
+User-agent: *
+Sitemap: http://www-etu-info.iut2.upmf-grenoble.fr/~loiacopi/sitemap.xml
+Disallow:

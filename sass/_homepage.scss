@@ -1,0 +1,135 @@
+body.homepage {
+  background-color: #000;
+  color: #fff;
+
+  display: flex;
+
+  .wrapper {
+    flex: 1 1 auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    > header {
+      display: none;
+    }
+
+    > #menu {
+      position: relative;
+      z-index: 10;
+      flex: 0 1 auto;
+
+      nav {
+        background: transparent !important;
+        padding: 15px;
+
+        @media (min-width: 768px) {
+          padding: 15px 30px;
+        }
+
+        @media (min-width: 1024px) {
+          padding: 30px 60px;
+        }
+      }
+    }
+
+    > footer {
+      z-index: 2;
+      flex: 0 1 auto;
+      // border: 10px solid red;
+      font-size: 12px;
+    }
+
+    > main {
+      z-index: 2;
+      flex: 1 1 auto;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 15px;
+
+      @media (min-width: 768px) {
+        padding: 30px;
+      }
+
+      @media (min-width: 1024px) {
+        padding: 60px;
+      }
+
+      h1 {
+        margin-bottom: 2rem;
+        font-size: 3rem;
+        font-family: "Merriweather", serif;
+      }
+
+      .presentation {
+        // max-width: 600px;
+        @media (min-width: 768px) {
+          display: flex;
+
+          margin: 0 -15px;
+
+          > p {
+            flex: 1;
+            padding: 15px;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          margin: 0 -30px;
+
+          > p {
+            padding: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  > .slideshow {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    // background: red;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+
+      background: linear-gradient(
+          180deg,
+          rgba(#000, 0.5) 5rem,
+          rgba(#000, 0) 25rem
+        ),
+        linear-gradient(10deg, rgba(#000, 0.6) 40%, rgba(#000, 0));
+    }
+
+    img {
+      opacity: 0;
+      transition: opacity 1s linear;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      &.on {
+        opacity: 1;
+      }
+    }
+  }
+}

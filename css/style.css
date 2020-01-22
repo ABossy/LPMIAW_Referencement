@@ -1,0 +1,770 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background-color: #fff;
+}
+
+#mapid {
+  height: 500px;
+}
+
+.destination,
+.audio,
+.video {
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  background-color: rgba(244, 243, 243, 0.5);
+}
+
+tr:hover {
+  background-color: #f5f5dc;
+}
+
+th,
+td {
+  border-bottom: 1px solid #ddd;
+}
+
+/*navigation*/
+nav {
+  width: 100%;
+}
+
+nav #menu a {
+  color: black;
+  text-decoration: none;
+}
+
+nav #menu .menu-item:hover {
+  background-color: grey;
+}
+
+nav a:hover .sous-menu {
+  visibility: visible;
+}
+
+nav .sous-menu {
+  list-style-type: none;
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
+}
+
+nav #menu {
+  list-style-type: none;
+  display: flex;
+}
+
+nav #menu .menu-item {
+  position: relative;
+}
+
+nav .menu-item:hover .sous-menu {
+  background: tomato;
+  position: absolute;
+  visibility: visible;
+  display: block;
+  top: 30px;
+  left: 0px;
+}
+
+#menu nav .nav-item {
+  margin: 0 0.5rem;
+}
+#menu nav .navbar-brand img {
+  width: 50px;
+  height: 50px;
+}
+
+/*Formulaire contact*/
+.formulaire {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(244, 243, 243, 0.5);
+}
+
+label {
+  display: block;
+}
+
+h2 {
+  text-align: center;
+}
+
+.containerCustom {
+  max-width: 40%;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+body.homepage {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+}
+body.homepage .wrapper {
+  flex: 1 1 auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+body.homepage .wrapper > header {
+  display: none;
+}
+body.homepage .wrapper > #menu {
+  position: relative;
+  z-index: 10;
+  flex: 0 1 auto;
+}
+body.homepage .wrapper > #menu nav {
+  background: transparent !important;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  body.homepage .wrapper > #menu nav {
+    padding: 15px 30px;
+  }
+}
+@media (min-width: 1024px) {
+  body.homepage .wrapper > #menu nav {
+    padding: 30px 60px;
+  }
+}
+body.homepage .wrapper > footer {
+  z-index: 2;
+  flex: 0 1 auto;
+  font-size: 12px;
+}
+body.homepage .wrapper > main {
+  z-index: 2;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  body.homepage .wrapper > main {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  body.homepage .wrapper > main {
+    padding: 60px;
+  }
+}
+body.homepage .wrapper > main h1 {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-family: "Merriweather", serif;
+}
+@media (min-width: 768px) {
+  body.homepage .wrapper > main .presentation {
+    display: flex;
+    margin: 0 -15px;
+  }
+  body.homepage .wrapper > main .presentation > p {
+    flex: 1;
+    padding: 15px;
+  }
+}
+@media (min-width: 1024px) {
+  body.homepage .wrapper > main .presentation {
+    margin: 0 -30px;
+  }
+  body.homepage .wrapper > main .presentation > p {
+    padding: 30px;
+  }
+}
+body.homepage > .slideshow {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+body.homepage > .slideshow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 5rem, rgba(0, 0, 0, 0) 25rem), linear-gradient(10deg, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0));
+}
+body.homepage > .slideshow img {
+  opacity: 0;
+  transition: opacity 1s linear;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+body.homepage > .slideshow img.on {
+  opacity: 1;
+}
+
+body.services {
+  background-color: #fff;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  color: #000;
+  display: flex;
+}
+body.services .wrapper {
+  flex: 1 1 auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+body.services .wrapper > header {
+  display: none;
+}
+body.services .wrapper > #menu {
+  position: relative;
+  z-index: 10;
+  flex: 0 1 auto;
+}
+body.services .wrapper > #menu nav {
+  background: transparent !important;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  body.services .wrapper > #menu nav {
+    padding: 15px 30px;
+  }
+}
+@media (min-width: 1024px) {
+  body.services .wrapper > #menu nav {
+    padding: 30px 60px;
+  }
+}
+body.services .wrapper > footer {
+  z-index: 2;
+  flex: 0 1 auto;
+  font-size: 12px;
+}
+body.services .wrapper > main {
+  z-index: 2;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  body.services .wrapper > main {
+    flex-flow: row wrap;
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  body.services .wrapper > main {
+    padding: 60px;
+  }
+}
+body.services .wrapper > main h1 {
+  font-size: 3rem;
+  font-family: "Merriweather", serif;
+}
+body.services .wrapper > main h2 {
+  text-align: left;
+}
+body.services .wrapper > main > header {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  body.services .wrapper > main > .informations {
+    width: 25%;
+  }
+}
+@media (min-width: 768px) {
+  body.services .wrapper > main > .localisations {
+    width: 75%;
+  }
+}
+body.services .wrapper > main > .assistance {
+  margin-top: 15px;
+}
+@media (min-width: 768px) {
+  body.services .wrapper > main > .assistance {
+    margin-top: 30px;
+    width: 100%;
+  }
+}
+
+body.destinations {
+  background-color: #fff;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  color: #000;
+  display: flex;
+}
+body.destinations .wrapper {
+  flex: 1 1 auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+body.destinations .wrapper > header {
+  display: none;
+}
+body.destinations .wrapper > #menu {
+  position: relative;
+  z-index: 10;
+  flex: 0 1 auto;
+}
+body.destinations .wrapper > #menu nav {
+  background: transparent !important;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  body.destinations .wrapper > #menu nav {
+    padding: 15px 30px;
+  }
+}
+@media (min-width: 1024px) {
+  body.destinations .wrapper > #menu nav {
+    padding: 30px 60px;
+  }
+}
+body.destinations .wrapper > footer {
+  z-index: 2;
+  flex: 0 1 auto;
+  font-size: 12px;
+}
+body.destinations .wrapper > main {
+  z-index: 2;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  body.destinations .wrapper > main {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  body.destinations .wrapper > main {
+    padding: 60px;
+  }
+}
+body.destinations .wrapper > main header.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+body.destinations .wrapper > main header.main h1 {
+  font-size: 3rem;
+}
+body.destinations .wrapper > main h1 {
+  font-family: "Merriweather", serif;
+}
+body.destinations .wrapper > main h2 {
+  text-align: left;
+}
+body.destinations .destinations-list {
+  flex: 0 1 auto;
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 1200px;
+  margin: 15px -15px;
+}
+body.destinations .destinations-list .destination-item {
+  display: flex;
+  width: 100%;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  body.destinations .destinations-list .destination-item {
+    width: 33.3333333333%;
+  }
+}
+@media (min-width: 1024px) {
+  body.destinations .destinations-list .destination-item {
+    width: 25%;
+  }
+}
+body.destinations .destinations-list .destination-item .destination-card {
+  flex: 1;
+}
+
+.destination-card {
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  display: flex;
+  flex-flow: column;
+}
+.destination-card__image {
+  position: relative;
+  order: 1;
+  margin: -15px -15px 15px -15px;
+}
+.destination-card__image::before {
+  display: block;
+  content: "";
+  padding-bottom: 50%;
+}
+.destination-card__image img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.destination-card__title {
+  font-size: 2rem;
+}
+.destination-card__header {
+  order: 2;
+}
+.destination-card__country {
+  order: 3;
+}
+.destination-card__price {
+  order: 4;
+}
+.destination-card__tools {
+  order: 5;
+}
+
+body.audio {
+  background-color: #fff;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  color: #000;
+  display: flex;
+}
+body.audio .wrapper {
+  flex: 1 1 auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+body.audio .wrapper > header {
+  display: none;
+}
+body.audio .wrapper > #menu {
+  position: relative;
+  z-index: 10;
+  flex: 0 1 auto;
+}
+body.audio .wrapper > #menu nav {
+  background: transparent !important;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  body.audio .wrapper > #menu nav {
+    padding: 15px 30px;
+  }
+}
+@media (min-width: 1024px) {
+  body.audio .wrapper > #menu nav {
+    padding: 30px 60px;
+  }
+}
+body.audio .wrapper > footer {
+  z-index: 2;
+  flex: 0 1 auto;
+  font-size: 12px;
+}
+body.audio .wrapper > main {
+  z-index: 2;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  body.audio .wrapper > main {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  body.audio .wrapper > main {
+    padding: 60px;
+  }
+}
+body.audio .wrapper > main header.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+body.audio .wrapper > main header.main h1 {
+  font-size: 3rem;
+}
+body.audio .wrapper > main h1 {
+  font-family: "Merriweather", serif;
+}
+body.audio .wrapper > main h2 {
+  text-align: left;
+}
+body.audio table {
+  table-layout: fixed;
+  margin: 30px 0;
+}
+body.audio table img {
+  width: 100%;
+  height: auto;
+}
+body.audio table audio {
+  width: 100%;
+}
+
+body.video {
+  background-color: #fff;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  color: #000;
+  display: flex;
+}
+body.video .wrapper {
+  flex: 1 1 auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+body.video .wrapper > header {
+  display: none;
+}
+body.video .wrapper > #menu {
+  position: relative;
+  z-index: 10;
+  flex: 0 1 auto;
+}
+body.video .wrapper > #menu nav {
+  background: transparent !important;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  body.video .wrapper > #menu nav {
+    padding: 15px 30px;
+  }
+}
+@media (min-width: 1024px) {
+  body.video .wrapper > #menu nav {
+    padding: 30px 60px;
+  }
+}
+body.video .wrapper > footer {
+  z-index: 2;
+  flex: 0 1 auto;
+  font-size: 12px;
+}
+body.video .wrapper > main {
+  z-index: 2;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  body.video .wrapper > main {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  body.video .wrapper > main {
+    padding: 60px;
+  }
+}
+body.video .wrapper > main header.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+body.video .wrapper > main header.main h1 {
+  font-size: 3rem;
+}
+body.video .wrapper > main h1 {
+  font-family: "Merriweather", serif;
+}
+body.video .wrapper > main h2 {
+  text-align: left;
+}
+body.video .videos-list {
+  flex: 0 1 auto;
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 1200px;
+  margin: 15px -15px;
+}
+body.video .videos-list .video-item {
+  display: flex;
+  width: 100%;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  body.video .videos-list .video-item {
+    width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  body.video .videos-list .video-item {
+    width: 33.3333333333%;
+  }
+}
+body.video .videos-list .video-item .video-card {
+  flex: 1;
+}
+
+.video-card {
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  display: flex;
+  flex-flow: column;
+}
+.video-card__video {
+  position: relative;
+  order: 1;
+  margin: -15px -15px 15px -15px;
+  overflow: hidden;
+}
+.video-card__video::before {
+  display: block;
+  content: "";
+  padding-bottom: 50%;
+}
+.video-card__video video {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: auto;
+  transform: translateY(-50%);
+}
+.video-card__title {
+  font-size: 2rem;
+}
+.video-card__header {
+  order: 2;
+}
+.video-card__description {
+  order: 3;
+}
+
+body.contact {
+  background-color: #fff;
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  color: #000;
+  display: flex;
+}
+body.contact .wrapper {
+  flex: 1 1 auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+body.contact .wrapper > header {
+  display: none;
+}
+body.contact .wrapper > #menu {
+  position: relative;
+  z-index: 10;
+  flex: 0 1 auto;
+}
+body.contact .wrapper > #menu nav {
+  background: transparent !important;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  body.contact .wrapper > #menu nav {
+    padding: 15px 30px;
+  }
+}
+@media (min-width: 1024px) {
+  body.contact .wrapper > #menu nav {
+    padding: 30px 60px;
+  }
+}
+body.contact .wrapper > footer {
+  z-index: 2;
+  flex: 0 1 auto;
+  font-size: 12px;
+}
+body.contact .wrapper > main {
+  z-index: 2;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+@media (min-width: 768px) {
+  body.contact .wrapper > main {
+    padding: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  body.contact .wrapper > main {
+    padding: 60px;
+  }
+}
+body.contact .wrapper > main header.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+body.contact .wrapper > main header.main h1 {
+  font-size: 3rem;
+}
+body.contact .wrapper > main h1 {
+  font-family: "Merriweather", serif;
+}
+body.contact .wrapper > main h2 {
+  text-align: left;
+}
+body.contact textarea {
+  resize: none;
+}
+
+/*# sourceMappingURL=style.css.map */
